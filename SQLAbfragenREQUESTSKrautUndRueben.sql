@@ -71,8 +71,8 @@ RIGHT JOIN Ingredient ON RecipeIngredient.ingredientID = Ingredient.ingredientID
 WHERE recipeID is null;
 
 
--- 6) Selection of all recipes that do not exceed a certain amount of calories CHECK
-SELECT Recipe.recipeName, SUM(Ingredient.caloriesPer100g * RecipeIngredient.quantity) / 100) as calories 
+-- 6a) Selection of all recipes that do not exceed a certain amount of calories CHECK
+SELECT Recipe.recipeName, SUM(Ingredient.caloriesPer100g * RecipeIngredient.quantity) / 100 as calories 
 FROM Recipe
 JOIN RecipeIngredient
 ON RecipeIngredient.recipeID = Recipe.recipeID
